@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloflutter/01/02_HelloWorld02.dart';
+import 'package:helloflutter/01_hello_flutter/02_HelloWorld02.dart';
 
 void main() => runApp(myapp());
 
