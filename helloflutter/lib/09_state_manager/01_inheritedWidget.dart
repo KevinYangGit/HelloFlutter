@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class KYShareData extends InheritedWidget {
-  // 1.共享数据
+  // 1.共享数据 counter
   final counter;
 
   // 2.定义构造方法

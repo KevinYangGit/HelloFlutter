@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:helloflutter/07_douban/model/home_model.dart';
 import 'package:helloflutter/09_state_manager/Model/counter_view_model.dart';
 import 'package:helloflutter/09_state_manager/Model/init_providers.dart';
-import 'package:helloflutter/09_state_manager/Model/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 /*
@@ -12,9 +11,13 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    MultiProvider(
-      providers: providers,
-      child: KYMyApp(),
+    // MultiProvider(
+    //   providers: providers,
+    //   child: KYMyApp(),
+    // )
+    ChangeNotifierProvider(
+      create: (cxt) => KYCounterViewModel(),
+      child: KYMyApp()
     )
   );
 }
@@ -87,9 +90,9 @@ class _KYTextFulWidgetState02 extends State<KYTextFulWidget02> {
   @override
   Widget build(BuildContext context) {
     print("_KYTextFulWidgetState02 - build()");
-    return Consumer2<KYCounterViewModel, KYUserViewModel>(
-      builder: (context, value1, value2, child) {
-        return Text('用户名：${value2.user.nickName}, 年龄：${value2.user.level}');
+    return Consumer<KYCounterViewModel>(
+      builder: (context, value, child) {
+        return Text('02当前计数：${value.counter}');
       }
     );
   }

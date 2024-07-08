@@ -1,3 +1,9 @@
+/*
+单子布局组件的含义是其只有一个子组件，可以通过设置一些属性设置该子组件所在的位置信息等。
+
+比较常用的单子布局组件有：Align、Center、Padding、Container。
+*/
+
 import 'package:flutter/material.dart';
 
 main() => runApp(MyApp());
@@ -46,6 +52,10 @@ class MyBody extends StatelessWidget {
 }
 /*
 Container+BoxDecoration
+
+Container组件类似于其他Android中的View，iOS中的UIView。
+
+如果你需要一个视图，有一个背景颜色、图像、有固定的尺寸、需要一个边框、圆角等效果，那么就可以使用Container组件。
 */
 
 // class MyBody extends StatelessWidget {
@@ -87,6 +97,7 @@ Container+BoxDecoration
 
 // /*
 // Padding
+// Padding通常用于设置子Widget到父Widget的边距
 // */
 
 // class MyBody extends StatelessWidget {
@@ -108,6 +119,8 @@ Container+BoxDecoration
 
 /*
 Center
+
+事实上Center组件继承自Align，只是将alignment设置为Alignment.center。
 */
 
 // class MyBody extends StatelessWidget {
@@ -133,6 +146,12 @@ Center
 
 /*
 Align
+
+widthFactor和heightFactor作用：
+
+因为子组件在父组件中的对齐方式必须有一个前提，就是父组件得知道自己的范围（宽度和高度）；
+如果widthFactor和heightFactor不设置，那么默认Align会尽可能的大（尽可能占据自己所在的父组件）；
+我们也可以对他们进行设置，比如widthFactor设置为3，那么相对于Align的宽度是子组件跨度的3倍；
 */
 
 // class MyBody extends StatelessWidget {

@@ -1,3 +1,8 @@
+/*
+1、Row是水平排列的
+2、Row 的 children 创建多个子 Widget
+*/
+
 import 'package:flutter/material.dart';
 
 main() {

@@ -1,3 +1,22 @@
+/*
+我们考虑一个这样的布局：一个滑动的视图中包括一个标题视图（HeaderView），一个列表视图（ListView），一个网格视图（GridView）。
+我们怎么可以让它们做到统一的滑动效果呢？使用前面的滚动是很难做到的。
+Flutter中有一个可以完成这样滚动效果的Widget：CustomScrollView，可以统一管理多个滚动视图。
+在CustomScrollView中，每一个独立的，可滚动的Widget被称之为Sliver。
+补充：Sliver可以翻译成裂片、薄片，你可以将每一个独立的滚动视图当做一个小裂片。
+
+因为我们需要把很多的Sliver放在一个CustomScrollView中，所以CustomScrollView有一个slivers属性，里面让我们放对应的一些Sliver：
+
+SliverList：类似于我们之前使用过的ListView；
+SliverFixedExtentList：类似于SliverList，只是可以设置滚动的高度；
+SliverGrid：类似于我们之前使用过的GridView；
+SliverPadding：设置Sliver的内边距，因为可能要单独给Sliver设置内边距；
+SliverAppBar：添加一个AppBar，通常用来作为CustomScrollView的HeaderView；
+SliverSafeArea：设置内容显示在安全区域（比如不让齐刘海挡住我们的内容）
+
+jumpTo(double offset)、animateTo(double offset,...)：这两个方法用于跳转到指定的位置，它们不同之处在于，后者在跳转时会执行一个动画，而前者不会。
+*/
+
 import "package:flutter/material.dart";
 import 'dart:math';
 
@@ -112,7 +131,7 @@ class KYHomePage extends StatelessWidget {
 //     return CustomScrollView(
 //       slivers: <Widget>[
 //         SliverGrid(
-//             // 创建一个委托，使用给定的构建器回调为条子提供子级。
+//             // item：创建一个委托，使用给定的构建器回调为条子提供子级。
 //             delegate: SliverChildBuilderDelegate((BuildContext ctx, int int) {
 //               return Container(
 //                   color: Color.fromARGB(255, Random().nextInt(256),
@@ -120,7 +139,7 @@ class KYHomePage extends StatelessWidget {
 //             },
 //                 // item数量
 //                 childCount: 100),
-//             // 创建一个委托，用于在横轴上使用固定数量的图块进行网格布局。
+//             // 布局：创建一个委托，用于在横轴上使用固定数量的图块进行网格布局。
 //             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
 //                 crossAxisCount: 2,
 //                 crossAxisSpacing: 8,

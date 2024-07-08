@@ -1,3 +1,10 @@
+/*
+在我们开发注册、登录页面时，通常会有多个表单需要同时获取内容或者进行一些验证，如果对每一个TextField都分别进行验证，是一件比较麻烦的事情。
+做过前端的开发知道，我们可以将多个input标签放在一个form里面，Flutter也借鉴了这样的思想：我们可以通过Form对输入框进行分组，统一进行一些操作。
+
+
+*/
+
 import 'package:flutter/material.dart';
 
 main() => runApp(MyApp());

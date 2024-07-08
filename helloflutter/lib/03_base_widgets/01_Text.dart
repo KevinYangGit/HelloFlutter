@@ -1,3 +1,12 @@
+/*
+在Flutter中，我们可以将文本的控制显示分成两类：
+
+控制文本布局的参数： 如文本对齐方式 textAlign、文本排版方向 textDirection，文本显示最大行数 maxLines、文本截断规则 overflow 等等，这些都是构造函数中的参数；
+控制文本样式的参数： 如字体名称 fontFamily、字体大小 fontSize、文本颜色 color、文本阴影 shadows 等等，这些参数被统一封装到了构造函数中的参数 style 中；
+
+TextSpan 富文本（在Android中，我们可以使用SpannableString，在iOS中，我们可以使用NSAttributedString完成，了解即可）
+*/
+
 import 'package:flutter/material.dart';
 
 main() => runApp(MyApp());

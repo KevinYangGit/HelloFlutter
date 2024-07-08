@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // 第一步：创建自己的ChangeNotifier
 // 真正数据（状态）存放的地方
-class KYCounterPrivoder extends ChangeNotifier {
+class KYCounterViewModel extends ChangeNotifier {
   int _counter = 88;
 
   int get counter => _counter;

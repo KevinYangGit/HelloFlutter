@@ -1,3 +1,10 @@
+/*
+GridView用于展示多列的展示，在开发中也非常常见，比如直播App中的主播列表、电商中的商品列表等等。
+在Flutter中我们可以使用GridView来实现，使用方式和ListView也比较相似。
+
+和ListView一样，使用构造函数会一次性创建所有的子Widget，会带来性能问题，所以我们可以使用GridView.build来交给GridView自己管理需要创建的子Widget。
+*/
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -92,7 +99,7 @@ class myapp extends StatelessWidget {
 //             // 交叉轴间距
 //             crossAxisSpacing: 8
 //           ),
-//           // item 构建方法，实时创建
+//           // ** item 构建方法，实时创建 **
 //           itemBuilder: (BuildContext ctx, int index) {
 //             // item
 //             return Container(
